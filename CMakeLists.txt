@@ -17,7 +17,7 @@ set(SOURCES
 # Executable
 add_executable(cuddly ${SOURCES})
 
-# Include directories
+# Include directories (for future header files)
 target_include_directories(cuddly PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 # Find required packages
