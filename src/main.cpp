@@ -1,6 +1,14 @@
-#include <iostream>
 #include <gtk/gtk.h>
 #include <vte/vte.h>
+#include <glib.h>
+#include <stdlib.h>
+
+static void spawn_callback(VteTerminal* terminal, GPid pid, GError* error, gpointer user_data) {
+    if (error) {
+        g_printerr("Failed to spawn shell: %s\n", error->message);
+        g_error_free(error);
+    }
+}
 
 int main(int argc, char* argv[]) {
     gtk_init(&argc, &argv);
@@ -14,8 +22,12 @@ int main(int argc, char* argv[]) {
     // Create terminal widget
     GtkWidget* terminal = vte_terminal_new();
     
-    // Configure terminal
-    char* shell[] = {"/bin/bash", NULL};
+    // Get shell from environment or use fallback
+    const char* shell_env = g_getenv("SHELL");
+    const char* shell_path = shell_env ? shell_env : "/bin/bash";
+    char* shell[] = {(char*)shell_path, NULL};
+    
+    // Configure and spawn terminal
     vte_terminal_spawn_async(
         VTE_TERMINAL(terminal),
         VTE_PTY_DEFAULT,
@@ -27,7 +39,7 @@ int main(int argc, char* argv[]) {
         NULL,                       // child pid
         -1,                         // timeout
         NULL,                       // cancellable
-        NULL,                       // callback
+        spawn_callback,             // callback
         NULL                        // user data
     );
 
