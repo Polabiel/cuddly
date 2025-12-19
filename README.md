@@ -4,11 +4,20 @@ A modern terminal emulator for Linux inspired by Windows Terminal. Built with C+
 
 ## Features
 
-- **Multiple Color Schemes**: Built-in support for Campbell, One Half Dark, and more
-- **Customizable Keybindings**: Configure shortcuts for copy, paste, tabs, and more
-- **Tabbed Interface**: Support for multiple terminal tabs in a single window
-- **JSON Configuration**: Easy-to-edit configuration file for all settings
-- **Modern UI**: Clean, intuitive interface inspired by Windows Terminal
+- **Tabbed Interface**: Multiple terminal tabs in a single window with full tab management
+- **Multiple Color Schemes**: Built-in support for Campbell, One Half Dark, and custom schemes
+- **JSON Configuration**: Windows Terminal-style configuration with profiles and schemes
+- **Keybindings**: 
+  - `Ctrl+Shift+T` - New tab
+  - `Ctrl+Shift+W` - Close tab
+  - `Ctrl+Tab` - Next tab
+  - `Ctrl+Shift+Tab` - Previous tab
+  - `Ctrl+Shift+C` - Copy
+  - `Ctrl+Shift+V` - Paste
+- **Profile Support**: Customizable profiles with shell, font, colors, and cursor settings
+- **Modern UI**: Dark theme with Windows Terminal-inspired styling
+- **Tab Reordering**: Drag and drop tabs to reorder them
+- **Auto-close**: Tabs close automatically when shell exits
 
 ## Requirements
 
@@ -16,23 +25,24 @@ A modern terminal emulator for Linux inspired by Windows Terminal. Built with C+
 - C++17 compatible compiler (GCC 7+, Clang 5+)
 - GTK+ 3.0
 - VTE 2.91 (libvte)
+- json-glib-1.0
 
 ### Installing Dependencies
 
 #### Ubuntu/Debian
 ```bash
 sudo apt-get update
-sudo apt-get install build-essential cmake libgtk-3-dev libvte-2.91-dev
+sudo apt-get install build-essential cmake libgtk-3-dev libvte-2.91-dev libjson-glib-dev
 ```
 
 #### Fedora
 ```bash
-sudo dnf install cmake gcc-c++ gtk3-devel vte291-devel
+sudo dnf install cmake gcc-c++ gtk3-devel vte291-devel json-glib-devel
 ```
 
 #### Arch Linux
 ```bash
-sudo pacman -S cmake gcc gtk3 vte3
+sudo pacman -S cmake gcc gtk3 vte3 json-glib
 ```
 
 ## Building
