@@ -1,2 +1,118 @@
-# cuddly
-A modern terminal emulator for Linux inspired by Windows Terminal
+# Cuddly Terminal Emulator
+
+A modern terminal emulator for Linux inspired by Windows Terminal. Built with C++ and GTK3, Cuddly provides a fast, customizable, and feature-rich terminal experience.
+
+## Features
+
+- **Multiple Color Schemes**: Built-in support for Campbell, One Half Dark, and more
+- **Customizable Keybindings**: Configure shortcuts for copy, paste, tabs, and more
+- **Tabbed Interface**: Support for multiple terminal tabs in a single window
+- **JSON Configuration**: Easy-to-edit configuration file for all settings
+- **Modern UI**: Clean, intuitive interface inspired by Windows Terminal
+
+## Requirements
+
+- CMake 3.15 or higher
+- C++17 compatible compiler (GCC 7+, Clang 5+)
+- GTK+ 3.0
+- VTE 2.91 (libvte)
+
+### Installing Dependencies
+
+#### Ubuntu/Debian
+```bash
+sudo apt-get update
+sudo apt-get install build-essential cmake libgtk-3-dev libvte-2.91-dev
+```
+
+#### Fedora
+```bash
+sudo dnf install cmake gcc-c++ gtk3-devel vte291-devel
+```
+
+#### Arch Linux
+```bash
+sudo pacman -S cmake gcc gtk3 vte3
+```
+
+## Building
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Polabiel/cuddly.git
+cd cuddly
+```
+
+2. Create a build directory and compile:
+```bash
+mkdir build
+cd build
+cmake ..
+make
+```
+
+3. (Optional) Install system-wide:
+```bash
+sudo make install
+```
+
+## Running
+
+After building, you can run the terminal emulator:
+
+```bash
+# From the build directory
+./cuddly
+
+# Or if installed system-wide
+cuddly
+```
+
+## Configuration
+
+Configuration is stored in `resources/defaults.json`. You can customize:
+
+- **Profiles**: Shell command, color scheme, font settings
+- **Color Schemes**: Foreground, background, and ANSI colors
+- **Keybindings**: Custom keyboard shortcuts
+- **Appearance**: Theme, opacity, tab behavior
+
+Example configuration:
+```json
+{
+  "profiles": {
+    "defaults": {
+      "name": "Default",
+      "commandline": "/bin/bash",
+      "colorScheme": "Campbell",
+      "fontSize": 12
+    }
+  }
+}
+```
+
+## Project Structure
+
+```
+cuddly/
+├── CMakeLists.txt          # Build configuration
+├── README.md               # This file
+├── LICENSE                 # MIT License
+├── resources/
+│   └── defaults.json       # Terminal configuration
+├── include/                # Header files
+└── src/                    # Source files
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Inspired by [Windows Terminal](https://github.com/microsoft/terminal)
+- Built with [GTK+](https://www.gtk.org/) and [VTE](https://wiki.gnome.org/Apps/Terminal/VTE)
