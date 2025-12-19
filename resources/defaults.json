@@ -10,7 +10,30 @@
       "cursorColor": "#FFFFFF",
       "scrollbackLines": 10000,
       "closeOnExit": "graceful"
-    }
+    },
+    "list": [
+      {
+        "name": "Bash",
+        "commandline": "/bin/bash",
+        "colorScheme": "Campbell",
+        "fontSize": 12,
+        "fontFamily": "monospace"
+      },
+      {
+        "name": "Zsh",
+        "commandline": "/bin/zsh",
+        "colorScheme": "One Half Dark",
+        "fontSize": 12,
+        "fontFamily": "monospace"
+      },
+      {
+        "name": "Fish",
+        "commandline": "/usr/bin/fish",
+        "colorScheme": "Dracula",
+        "fontSize": 12,
+        "fontFamily": "monospace"
+      }
+    ]
   },
   "schemes": [
     {
@@ -54,6 +77,69 @@
       "brightPurple": "#C678DD",
       "brightCyan": "#56B6C2",
       "brightWhite": "#DCDFE4"
+    },
+    {
+      "name": "Solarized Dark",
+      "foreground": "#839496",
+      "background": "#002B36",
+      "black": "#002B36",
+      "red": "#DC322F",
+      "green": "#859900",
+      "yellow": "#B58900",
+      "blue": "#268BD2",
+      "purple": "#D33682",
+      "cyan": "#2AA198",
+      "white": "#EEE8D5",
+      "brightBlack": "#073642",
+      "brightRed": "#CB4B16",
+      "brightGreen": "#586E75",
+      "brightYellow": "#657B83",
+      "brightBlue": "#839496",
+      "brightPurple": "#6C71C4",
+      "brightCyan": "#93A1A1",
+      "brightWhite": "#FDF6E3"
+    },
+    {
+      "name": "Tango Dark",
+      "foreground": "#D3D7CF",
+      "background": "#2E3436",
+      "black": "#2E3436",
+      "red": "#CC0000",
+      "green": "#4E9A06",
+      "yellow": "#C4A000",
+      "blue": "#3465A4",
+      "purple": "#75507B",
+      "cyan": "#06989A",
+      "white": "#D3D7CF",
+      "brightBlack": "#555753",
+      "brightRed": "#EF2929",
+      "brightGreen": "#8AE234",
+      "brightYellow": "#FCE94F",
+      "brightBlue": "#729FCF",
+      "brightPurple": "#AD7FA8",
+      "brightCyan": "#34E2E2",
+      "brightWhite": "#EEEEEC"
+    },
+    {
+      "name": "Dracula",
+      "foreground": "#F8F8F2",
+      "background": "#282A36",
+      "black": "#21222C",
+      "red": "#FF5555",
+      "green": "#50FA7B",
+      "yellow": "#F1FA8C",
+      "blue": "#BD93F9",
+      "purple": "#FF79C6",
+      "cyan": "#8BE9FD",
+      "white": "#F8F8F2",
+      "brightBlack": "#6272A4",
+      "brightRed": "#FF6E6E",
+      "brightGreen": "#69FF94",
+      "brightYellow": "#FFFFA5",
+      "brightBlue": "#D6ACFF",
+      "brightPurple": "#FF92DF",
+      "brightCyan": "#A4FFFF",
+      "brightWhite": "#FFFFFF"
     }
   ],
   "keybindings": [
@@ -80,6 +166,18 @@
     {
       "command": "prevTab",
       "keys": "ctrl+shift+tab"
+    },
+    {
+      "command": "splitHorizontal",
+      "keys": "ctrl+shift+h"
+    },
+    {
+      "command": "splitVertical",
+      "keys": "ctrl+shift+v"
+    },
+    {
+      "command": "find",
+      "keys": "ctrl+shift+f"
     }
   ],
   "appearance": {

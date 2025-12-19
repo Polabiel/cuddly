@@ -5,7 +5,7 @@ A modern terminal emulator for Linux inspired by Windows Terminal. Built with C+
 ## Features
 
 - **Tabbed Interface**: Multiple terminal tabs in a single window with full tab management
-- **Multiple Color Schemes**: Built-in support for Campbell, One Half Dark, and custom schemes
+- **Multiple Color Schemes**: Built-in support for Campbell, One Half Dark, Solarized Dark, Tango Dark, Dracula, and custom schemes
 - **JSON Configuration**: Windows Terminal-style configuration with profiles and schemes
 - **Keybindings**: 
   - `Ctrl+Shift+T` - New tab
@@ -14,10 +14,15 @@ A modern terminal emulator for Linux inspired by Windows Terminal. Built with C+
   - `Ctrl+Shift+Tab` - Previous tab
   - `Ctrl+Shift+C` - Copy
   - `Ctrl+Shift+V` - Paste
+  - `Ctrl+Shift+H` - Split pane horizontally (planned)
+  - `Ctrl+Shift+V` - Split pane vertically (planned)
+  - `Ctrl+Shift+F` - Find in terminal (planned)
 - **Profile Support**: Customizable profiles with shell, font, colors, and cursor settings
-- **Modern UI**: Dark theme with Windows Terminal-inspired styling
+- **Modern UI**: Dark theme with Windows Terminal-inspired styling and CSS theming
 - **Tab Reordering**: Drag and drop tabs to reorder them
 - **Auto-close**: Tabs close automatically when shell exits
+- **Cursor Customization**: Support for bar, underline, and block cursor shapes
+- **Scrollback**: Configurable scrollback buffer (default 10,000 lines)
 
 ## Requirements
 
@@ -126,3 +131,27 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Inspired by [Windows Terminal](https://github.com/microsoft/terminal)
 - Built with [GTK+](https://www.gtk.org/) and [VTE](https://wiki.gnome.org/Apps/Terminal/VTE)
+
+## Windows Terminal Feature Parity
+
+Cuddly Terminal aims to bring Windows Terminal's best features to Linux:
+
+### Implemented
+- ✅ JSON-based configuration (similar to settings.json)
+- ✅ Multiple color schemes with full ANSI color support
+- ✅ Tabbed interface with drag-to-reorder
+- ✅ Profile system for different shell configurations
+- ✅ Customizable keybindings
+- ✅ Modern, dark-themed UI
+- ✅ Font customization (family and size)
+- ✅ Cursor shape customization (bar, block, underline)
+- ✅ Configurable scrollback buffer
+
+### Planned
+- 🔄 Split panes (horizontal and vertical)
+- 🔄 Command palette
+- 🔄 Search in terminal
+- 🔄 Background image support
+- 🔄 Opacity/transparency settings
+- 🔄 Multiple profile support
+- 🔄 Profile switching via dropdown
