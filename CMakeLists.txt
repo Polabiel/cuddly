@@ -9,14 +9,16 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # Export compile commands for IDEs
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Include directories
-include_directories(${CMAKE_SOURCE_DIR}/include)
-
 # Source files
-file(GLOB_RECURSE SOURCES "src/*.cpp")
+set(SOURCES
+    src/main.cpp
+)
 
 # Executable
 add_executable(cuddly ${SOURCES})
+
+# Include directories
+target_include_directories(cuddly PRIVATE ${CMAKE_SOURCE_DIR}/include)
 
 # Find required packages
 find_package(PkgConfig REQUIRED)
