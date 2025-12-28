@@ -68,6 +68,9 @@ static void apply_profile_settings(VteTerminal* terminal, ProfileConfig* profile
     
     // Apply scrollback
     vte_terminal_set_scrollback_lines(terminal, profile->scrollbackLines);
+    
+    // Enable cursor blinking for smooth animations
+    vte_terminal_set_cursor_blink_mode(terminal, VTE_CURSOR_BLINK_ON);
 }
 
 static void spawn_callback(VteTerminal* terminal, GPid pid, GError* error, gpointer user_data) {
@@ -254,29 +257,50 @@ static gboolean on_key_press(GtkWidget* widget, GdkEventKey* event, gpointer use
 static void apply_css_styling(AppState* app) {
     GtkCssProvider* provider = gtk_css_provider_new();
     
+    // Enhanced CSS with transparency and gradient effects
     const gchar* css_data = 
         "window {"
-        "    background-color: #1e1e1e;"
+        "    background: linear-gradient(135deg, rgba(30, 30, 30, 0.95) 0%, rgba(45, 45, 45, 0.95) 100%);"
         "}"
         "notebook {"
-        "    background-color: #2d2d2d;"
+        "    background: linear-gradient(180deg, rgba(35, 35, 38, 0.98) 0%, rgba(45, 45, 48, 0.98) 100%);"
         "    border: none;"
+        "    border-radius: 8px;"
         "}"
         "notebook header {"
-        "    background-color: #2d2d2d;"
-        "    border-bottom: 1px solid #3e3e3e;"
+        "    background: linear-gradient(180deg, rgba(40, 40, 45, 0.95) 0%, rgba(35, 35, 40, 0.95) 100%);"
+        "    border: none;"
+        "    border-bottom: 1px solid rgba(62, 62, 62, 0.5);"
+        "    border-radius: 8px 8px 0 0;"
+        "    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);"
+        "}"
+        "notebook header tabs {"
+        "    background: transparent;"
         "}"
         "notebook header tabs tab {"
-        "    background-color: #2d2d2d;"
-        "    color: #cccccc;"
+        "    background: linear-gradient(180deg, rgba(45, 45, 48, 0.8) 0%, rgba(40, 40, 43, 0.8) 100%);"
+        "    color: rgba(204, 204, 204, 0.9);"
         "    border: none;"
-        "    padding: 8px 16px;"
-        "    margin: 0;"
+        "    border-radius: 6px 6px 0 0;"
+        "    padding: 10px 20px;"
+        "    margin: 2px 2px 0 2px;"
+        "    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.2);"
+        "    transition: all 200ms ease-in-out;"
+        "}"
+        "notebook header tabs tab:hover {"
+        "    background: linear-gradient(180deg, rgba(55, 55, 60, 0.9) 0%, rgba(50, 50, 55, 0.9) 100%);"
+        "    color: rgba(255, 255, 255, 0.95);"
+        "    box-shadow: 0 2px 6px rgba(0, 120, 212, 0.3);"
         "}"
         "notebook header tabs tab:checked {"
-        "    background-color: #1e1e1e;"
+        "    background: linear-gradient(180deg, rgba(30, 30, 33, 0.98) 0%, rgba(25, 25, 28, 0.98) 100%);"
         "    color: #ffffff;"
-        "    border-bottom: 2px solid #0078d4;"
+        "    border-bottom: 3px solid #0078d4;"
+        "    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.4), inset 0 1px 3px rgba(255, 255, 255, 0.1);"
+        "}"
+        "scrolledwindow {"
+        "    background: rgba(12, 12, 12, 0.95);"
+        "    border-radius: 0 0 8px 8px;"
         "}";
     
     gtk_css_provider_load_from_data(provider, css_data, -1, NULL);
@@ -306,6 +330,22 @@ int main(int argc, char* argv[]) {
     app->window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title(GTK_WINDOW(app->window), "Cuddly Terminal");
     gtk_window_set_default_size(GTK_WINDOW(app->window), 1000, 600);
+    
+    // Enable transparency and visual effects
+    GdkScreen* screen = gtk_widget_get_screen(app->window);
+    GdkVisual* visual = gdk_screen_get_rgba_visual(screen);
+    if (visual != NULL && gdk_screen_is_composited(screen)) {
+        gtk_widget_set_visual(app->window, visual);
+        gtk_widget_set_app_paintable(app->window, TRUE);
+    }
+    
+    // Apply opacity from config
+    if (app->config && app->config->opacity > 0.0 && app->config->opacity <= 1.0) {
+        gtk_widget_set_opacity(app->window, app->config->opacity);
+    } else {
+        gtk_widget_set_opacity(app->window, 0.95); // Default 95% opacity for glass effect
+    }
+    
     g_signal_connect(app->window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     g_signal_connect(app->window, "key-press-event", G_CALLBACK(on_key_press), app);
     

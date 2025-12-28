@@ -7,6 +7,12 @@ A modern terminal emulator for Linux inspired by Windows Terminal. Built with C+
 - **Tabbed Interface**: Multiple terminal tabs in a single window with full tab management
 - **Multiple Color Schemes**: Built-in support for Campbell, One Half Dark, Solarized Dark, Tango Dark, Dracula, and custom schemes
 - **JSON Configuration**: Windows Terminal-style configuration with profiles and schemes
+- **Visual Effects**: 
+  - **Window Transparency**: Adjustable opacity (default 95%) with acrylic blur effect
+  - **Gradient Backgrounds**: Smooth color gradients on window and tabs
+  - **Tab Animations**: Smooth transitions with hover and active states
+  - **Shadow Effects**: Depth-creating shadows on tabs and UI elements
+  - **Glass Effect**: Modern frosted glass aesthetic inspired by Windows Terminal
 - **Keybindings**: 
   - `Ctrl+Shift+T` - New tab
   - `Ctrl+Shift+W` - Close tab
@@ -18,10 +24,10 @@ A modern terminal emulator for Linux inspired by Windows Terminal. Built with C+
   - `Ctrl+Shift+V` - Split pane vertically (planned)
   - `Ctrl+Shift+F` - Find in terminal (planned)
 - **Profile Support**: Customizable profiles with shell, font, colors, and cursor settings
-- **Modern UI**: Dark theme with Windows Terminal-inspired styling and CSS theming
+- **Modern UI**: Dark theme with Windows Terminal-inspired styling, CSS gradients, and transparency
 - **Tab Reordering**: Drag and drop tabs to reorder them
 - **Auto-close**: Tabs close automatically when shell exits
-- **Cursor Customization**: Support for bar, underline, and block cursor shapes
+- **Cursor Customization**: Support for bar, underline, and block cursor shapes with blinking animation
 - **Scrollback**: Configurable scrollback buffer (default 10,000 lines)
 
 ## Requirements
@@ -90,7 +96,34 @@ Configuration is stored in `resources/defaults.json`. You can customize:
 - **Profiles**: Shell command, color scheme, font settings
 - **Color Schemes**: Foreground, background, and ANSI colors
 - **Keybindings**: Custom keyboard shortcuts
-- **Appearance**: Theme, opacity, tab behavior
+- **Appearance**: Theme, opacity, acrylic effects, tab behavior, animations
+
+### Visual Effects Configuration
+
+The appearance settings support advanced visual effects:
+
+```json
+{
+  "appearance": {
+    "theme": "dark",
+    "opacity": 0.95,           // Window transparency (0.0-1.0)
+    "useAcrylic": true,        // Enable acrylic blur effect
+    "acrylicOpacity": 0.85,    // Acrylic transparency level
+    "enableAnimations": true,   // Smooth tab transitions
+    "enableBlur": true,         // Background blur effect
+    "showTabsInTitlebar": true,
+    "alwaysShowTabs": true,
+    "tabWidthMode": "equal"
+  }
+}
+```
+
+**Visual Features:**
+- **Transparency**: Set `opacity` between 0.0 (fully transparent) and 1.0 (opaque). Default is 0.95 for a subtle glass effect.
+- **Acrylic Effect**: Enable `useAcrylic` for Windows Terminal-style frosted glass background.
+- **Gradients**: Automatically applied to window, tabs, and UI elements for depth and modern aesthetics.
+- **Animations**: Smooth transitions on tab hover, focus, and switching.
+- **Shadows**: Subtle drop shadows on tabs and active elements for visual hierarchy.
 
 Example configuration:
 ```json

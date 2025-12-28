@@ -182,10 +182,13 @@
   ],
   "appearance": {
     "theme": "dark",
-    "opacity": 1.0,
-    "useAcrylic": false,
+    "opacity": 0.95,
+    "useAcrylic": true,
+    "acrylicOpacity": 0.85,
     "showTabsInTitlebar": true,
     "alwaysShowTabs": true,
-    "tabWidthMode": "equal"
+    "tabWidthMode": "equal",
+    "enableAnimations": true,
+    "enableBlur": true
   }
 }
