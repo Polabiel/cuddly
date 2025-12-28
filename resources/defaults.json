@@ -1,0 +1,194 @@
+{
+  "profiles": {
+    "defaults": {
+      "name": "Default",
+      "commandline": "/bin/bash",
+      "colorScheme": "Campbell",
+      "fontSize": 12,
+      "fontFamily": "monospace",
+      "cursorShape": "bar",
+      "cursorColor": "#FFFFFF",
+      "scrollbackLines": 10000,
+      "closeOnExit": "graceful"
+    },
+    "list": [
+      {
+        "name": "Bash",
+        "commandline": "/bin/bash",
+        "colorScheme": "Campbell",
+        "fontSize": 12,
+        "fontFamily": "monospace"
+      },
+      {
+        "name": "Zsh",
+        "commandline": "/bin/zsh",
+        "colorScheme": "One Half Dark",
+        "fontSize": 12,
+        "fontFamily": "monospace"
+      },
+      {
+        "name": "Fish",
+        "commandline": "/usr/bin/fish",
+        "colorScheme": "Dracula",
+        "fontSize": 12,
+        "fontFamily": "monospace"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "name": "Campbell",
+      "foreground": "#CCCCCC",
+      "background": "#0C0C0C",
+      "black": "#0C0C0C",
+      "red": "#C50F1F",
+      "green": "#13A10E",
+      "yellow": "#C19C00",
+      "blue": "#0037DA",
+      "purple": "#881798",
+      "cyan": "#3A96DD",
+      "white": "#CCCCCC",
+      "brightBlack": "#767676",
+      "brightRed": "#E74856",
+      "brightGreen": "#16C60C",
+      "brightYellow": "#F9F1A5",
+      "brightBlue": "#3B78FF",
+      "brightPurple": "#B4009E",
+      "brightCyan": "#61D6D6",
+      "brightWhite": "#F2F2F2"
+    },
+    {
+      "name": "One Half Dark",
+      "foreground": "#DCDFE4",
+      "background": "#282C34",
+      "black": "#282C34",
+      "red": "#E06C75",
+      "green": "#98C379",
+      "yellow": "#E5C07B",
+      "blue": "#61AFEF",
+      "purple": "#C678DD",
+      "cyan": "#56B6C2",
+      "white": "#DCDFE4",
+      "brightBlack": "#5A6374",
+      "brightRed": "#E06C75",
+      "brightGreen": "#98C379",
+      "brightYellow": "#E5C07B",
+      "brightBlue": "#61AFEF",
+      "brightPurple": "#C678DD",
+      "brightCyan": "#56B6C2",
+      "brightWhite": "#DCDFE4"
+    },
+    {
+      "name": "Solarized Dark",
+      "foreground": "#839496",
+      "background": "#002B36",
+      "black": "#002B36",
+      "red": "#DC322F",
+      "green": "#859900",
+      "yellow": "#B58900",
+      "blue": "#268BD2",
+      "purple": "#D33682",
+      "cyan": "#2AA198",
+      "white": "#EEE8D5",
+      "brightBlack": "#073642",
+      "brightRed": "#CB4B16",
+      "brightGreen": "#586E75",
+      "brightYellow": "#657B83",
+      "brightBlue": "#839496",
+      "brightPurple": "#6C71C4",
+      "brightCyan": "#93A1A1",
+      "brightWhite": "#FDF6E3"
+    },
+    {
+      "name": "Tango Dark",
+      "foreground": "#D3D7CF",
+      "background": "#2E3436",
+      "black": "#2E3436",
+      "red": "#CC0000",
+      "green": "#4E9A06",
+      "yellow": "#C4A000",
+      "blue": "#3465A4",
+      "purple": "#75507B",
+      "cyan": "#06989A",
+      "white": "#D3D7CF",
+      "brightBlack": "#555753",
+      "brightRed": "#EF2929",
+      "brightGreen": "#8AE234",
+      "brightYellow": "#FCE94F",
+      "brightBlue": "#729FCF",
+      "brightPurple": "#AD7FA8",
+      "brightCyan": "#34E2E2",
+      "brightWhite": "#EEEEEC"
+    },
+    {
+      "name": "Dracula",
+      "foreground": "#F8F8F2",
+      "background": "#282A36",
+      "black": "#21222C",
+      "red": "#FF5555",
+      "green": "#50FA7B",
+      "yellow": "#F1FA8C",
+      "blue": "#BD93F9",
+      "purple": "#FF79C6",
+      "cyan": "#8BE9FD",
+      "white": "#F8F8F2",
+      "brightBlack": "#6272A4",
+      "brightRed": "#FF6E6E",
+      "brightGreen": "#69FF94",
+      "brightYellow": "#FFFFA5",
+      "brightBlue": "#D6ACFF",
+      "brightPurple": "#FF92DF",
+      "brightCyan": "#A4FFFF",
+      "brightWhite": "#FFFFFF"
+    }
+  ],
+  "keybindings": [
+    {
+      "command": "copy",
+      "keys": "ctrl+shift+c"
+    },
+    {
+      "command": "paste",
+      "keys": "ctrl+shift+v"
+    },
+    {
+      "command": "newTab",
+      "keys": "ctrl+shift+t"
+    },
+    {
+      "command": "closeTab",
+      "keys": "ctrl+shift+w"
+    },
+    {
+      "command": "nextTab",
+      "keys": "ctrl+tab"
+    },
+    {
+      "command": "prevTab",
+      "keys": "ctrl+shift+tab"
+    },
+    {
+      "command": "splitHorizontal",
+      "keys": "ctrl+shift+h"
+    },
+    {
+      "command": "splitVertical",
+      "keys": "ctrl+shift+v"
+    },
+    {
+      "command": "find",
+      "keys": "ctrl+shift+f"
+    }
+  ],
+  "appearance": {
+    "theme": "dark",
+    "opacity": 0.95,
+    "useAcrylic": true,
+    "acrylicOpacity": 0.85,
+    "showTabsInTitlebar": true,
+    "alwaysShowTabs": true,
+    "tabWidthMode": "equal",
+    "enableAnimations": true,
+    "enableBlur": true
+  }
+}
